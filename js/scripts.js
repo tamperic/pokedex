@@ -10,7 +10,12 @@ let pokemonRepository = (function () {
     //adds the Pokémon to the pokemonList array and checks if the typeof parameter is an object
     function add(pokemon) {
         if (typeof pokemon === 'object' ) {
-            return pokemonList.push(pokemon);
+            // validates whether all Object.keys() of the parameter are equal to the specific keys
+            if (Object.keys(pokemonList).every(key => key in pokemon)) {
+                return pokemonList.push(pokemon);
+            } else {
+                alert("Your Pokémon must contain the following characteristics: name, height, and types.");
+            }
         }
     }
 
