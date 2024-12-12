@@ -7,9 +7,11 @@ let pokemonRepository = (function () {
         {name: 'Meowth', height: 4, types: ['steel', 'electric']}
     ];
 
-    //adds the Pokémon to the pokemonList array
+    //adds the Pokémon to the pokemonList array and checks if the typeof parameter is an object
     function add(pokemon) {
-      pokemonList.push(pokemon);
+        if (typeof pokemon === 'object' ) {
+            return pokemonList.push(pokemon);
+        }
     }
 
     // returns a pokemonList array
