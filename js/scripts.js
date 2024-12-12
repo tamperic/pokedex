@@ -5,8 +5,19 @@ let pokemonList = [
     {name: 'Wigglytuff', height: 10, types: ['ice', 'ghost']},
     {name: 'Meowth', height: 4, types: ['steel', 'electric']}
 ];
-let text = '';
 
+// forEach() that iterates over each item in Pokemon's list
+pokemonList.forEach(function(pokemon) {
+    document.write(`<p> ${pokemon.name} (height: ${pokemon.height}) </p>`);
+    if (pokemon.height > 10) {
+         document.write(" - Wow, that’s big!");
+      } else {
+        document.write(" ");
+      } 
+});  
+
+/*
+let text = '';
 // loop that iterates over each item in Pokemon's list
 for (let i = 0; i < pokemonList.length; i++)  {
     if (pokemonList[i].height > 10) {
@@ -15,4 +26,4 @@ for (let i = 0; i < pokemonList.length; i++)  {
         text = '';
     }
     document.write(`<p> ${pokemonList[i].name} (height: ${pokemonList[i].height}) ${text} </p>`);
-}
+} */
