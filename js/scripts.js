@@ -55,3 +55,10 @@ for (let i = 0; i < pokemonList.length; i++)  {
     }
     document.write(`<p> ${pokemonList[i].name} (height: ${pokemonList[i].height}) ${text} </p>`);
 } */
+
+//  added filter() function to find specific Pokémon by name
+function filterPokemon (name) {
+    let result = pokemonRepository.getAll().filter((pokemon) => pokemon.name === name);
+    console.log(result);
+}; 
+filterPokemon('Meowth');
