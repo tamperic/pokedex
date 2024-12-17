@@ -1,12 +1,45 @@
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 20px auto;
-  font-family: "Varela Round", sans-serif;
-  font-weight: 800;
-  font-size: 18; 
-  background-color: #98ebcc;
-  color: #0b120f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Varela Round", sans-serif;
+    color: #000;
+}
+
+.button-class {
+    display: inline-block;
+    width: 200px;
+    background-color: lightblue;
+    font-size: 16px;
+    margin: 2px 2px;
+    padding: 15px 35px;
+    text-align: center;
+    cursor: pointer;
+    border: 0px;
+    border-radius: 3px;
+}
+.button-class:hover, .button-class:focus {
+    width: 208px;
+    opacity: 0.8;
+}
+
+li {
+    list-style: none;
+}
+  
+/*  Media Queries  */
+  
+@media all and (max-width: 500px) {
+    h1 {
+      font-size: 20px;
+    }
+    .button-class {
+      width: 160px;
+      font-size: 14;
+    }
+    .button-class:hover, .button-class:focus {
+      width: 168px;
+    }
 }
