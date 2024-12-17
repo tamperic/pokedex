@@ -11,10 +11,11 @@ let pokemonRepository = (function () {
     function add(pokemon) {
         if (typeof pokemon === 'object' ) {
             // validates whether all Object.keys() of the parameter are equal to the specific keys
-            if (Object.keys(pokemonList).every(key => key in pokemon)) {
-                return pokemonList.push(pokemon);
+            const validKeys = ['name', 'height', 'types'];
+            if (validKeys.every(key => key in pokemon)) {
+              pokemonList.push(pokemon);
             } else {
-                alert("Your Pokémon must contain the following characteristics: name, height, and types.");
+              alert('Your Pokémon must contain name, height, and types!');
             }
         }
     }
@@ -23,10 +24,32 @@ let pokemonRepository = (function () {
     function getAll() {
       return pokemonList;
     }
+
+    function addListItem(pokemon)  {
+        let list = document.querySelector('.pokemon-list'); // assigned the variable to the <ul> element
+
+        let listItem = document.createElement('li'); // created a list element
+        let button = document.createElement('button'); // created a button element
+        button.innerText = pokemon.name; // added text of the Pokémon's names to the button element
+        button.classList.add('button-class'); // added class attribute to the button element
+
+        listItem.appendChild(button); // appended the button to the list item as its child
+        list.appendChild(listItem); // appended the list item to the <ul> as its child
+
+        button.addEventListener('click', function() {
+            showDetails(pokemon);
+        }); // added 'click' action to the Pokémon's buttons to show the name of Pokémon in the console
+    }
+
+    function showDetails(pokemon) {
+        console.log(pokemon.name);
+    }
     
     return {
       add: add,
-      getAll: getAll
+      getAll: getAll,
+      addListItem: addListItem,
+      showDetails: showDetails
     };
 })();
   
@@ -36,12 +59,13 @@ console.log(pokemonRepository.getAll());
   
 // forEach() that iterates over each item in Pokemon's list
 pokemonRepository.getAll().forEach(function(pokemon) {
-    document.write(`<p> ${pokemon.name} (height: ${pokemon.height}) </p>`);
+    pokemonRepository.addListItem(pokemon);
+    /* document.write(`<p> ${pokemon.name} (height: ${pokemon.height}) </p>`);
     if (pokemon.height > 10) {
         document.write(" - Wow, that’s big!");
     } else {
         document.write(" ");
-    } 
+    } */
 }); 
 
 /*
