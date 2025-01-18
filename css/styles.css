@@ -74,6 +74,15 @@ li > .btn-primary:hover, .btn-primary:focus {
     width: 180px;
     height: 180px;
 }
+
+.arrow {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    margin: 10px;
+}
   
   
 /*  Media Queries  */
