@@ -66,20 +66,27 @@ let pokemonRepository = (function () {
             return response.json();
         }).then(function (details) {
             item.imageUrl = details.sprites.front_default;
-            item.height = details.height;
-            item.types = details.types;
+            item.height = details.height; 
+            item.weight = details.weight;
+            item.types = details.types.map(type => type.type.name).join(', ');
             // added details to the item
         }).catch(function (e) {
             console.error(e);
         });
     }
 
-    function showModal(name, height, img) {
+    function showModal(name, height, weight, types, img) {
         let nameElement = document.querySelector('.modal-title');
         nameElement.innerText = name;
         
         let heightElement =  document.querySelector('.heightElement');
         heightElement.innerText = height;
+
+        let weightElement =  document.querySelector('.weightElement');
+        weightElement.innerText = weight;
+
+        let typesElement =  document.querySelector('.typesElement');
+        typesElement.innerText = types;
         
         let imageElement = document.querySelector('.imageElement');
        imageElement.setAttribute('src', img);
@@ -87,13 +94,15 @@ let pokemonRepository = (function () {
         let modalBody = document.querySelector('.modal-body');
         
         modalBody.appendChild(imageElement);
-        modalBody.appendChild(heightElement);  
+        modalBody.appendChild(heightElement);
+        modalBody.appendChild(weightElement);  
+        modalBody.appendChild(typesElement); 
     }
 
     // Load the Pokémon details from the API
     function showDetails(item) {
         pokemonRepository.loadDetails(item).then(function () {
-            showModal(item.name.toUpperCase(), 'Height: ' + item.height, item.imageUrl);
+            showModal(item.name.toUpperCase(), 'Height: ' + item.height, 'Weight: ' + item.weight, 'Type(s): ' + item.types, item.imageUrl);
         });
     }
     
