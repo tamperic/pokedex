@@ -83,6 +83,18 @@ li > .btn-primary:hover, .btn-primary:focus {
     height: 32px;
     margin: 10px;
 }
+
+/*  Animation  */ 
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+.modal { animation: fadeIn 1s ease-in-out; }
   
   
 /*  Media Queries  */
