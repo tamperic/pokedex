@@ -96,18 +96,22 @@ li > .btn-primary:hover, .btn-primary:focus {
 }
 .modal { animation: fadeIn 1s ease-in-out; }
   
-  
+
 /*  Media Queries  */
   
 @media all and (max-width: 500px) {
     h1 {
-      font-size: 20px;
+      font-size: var(--font-size-m);
     }
-    .button-class {
+    li > .btn, .btn-primary {
       width: 160px;
-      font-size: 14;
+      font-size: var(--font-size-s);
     }
-    .button-class:hover, .button-class:focus {
-      width: 168px;
-    }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+    li > .btn, .btn-primary {
+        width: 260px;
+        font-size: var(--font-size-s);
+      }
 }
