@@ -72,6 +72,7 @@ li > .btn-primary:hover, .btn-primary:focus {
     background-color: var(--tertiary-color);
     color: var(--text-hover-color);
     opacity: 0.8;
+    transform: scale(1.1);
 }
 
 .modal img {
