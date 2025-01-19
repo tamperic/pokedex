@@ -8,6 +8,8 @@ Pokedex is a project that is part of my learning journey of Full-Stack Web Devel
 
 It's a web app that allows users to find a list of Pokémons, and also to view more details of a particular Pokémon by clicking on that Pokémon.
 
+Live demo link: https://tamperic.github.io/simple-js-app/
+
 ___
 
 ## How it works
