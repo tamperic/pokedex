@@ -44,7 +44,7 @@ ___
 
 ### Prerequisites
 
-Install dependencies `npm install`or `yarn install`.
+Install dependencies `npm install` or `yarn install`.
 
 ### Installation
 
@@ -52,11 +52,11 @@ Install dependencies `npm install`or `yarn install`.
    ```bash
    git clone https://github.com/tamperic/pokedex.git
    
-2. Navigate to your project:
+2. Navigate to the project:
     ```bash
     cd pokedex
 
-2. Open index.html in a browser, or use a simple local server (e.g. with VSCode Live Server).
+3. Open index.html in a browser, or use a simple local server (e.g. with VSCode Live Server).
 
 ___
 
